@@ -5,7 +5,7 @@ import { toast } from 'react-hot-toast';
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
 const notifyFailed = () => toast.error('Registration Failed');
-const notifyNoSuchUser = () => toast.error('No Such User');
+const notifyNoSuchUser = () => toast.error('Invalid User or password');
 
 const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;

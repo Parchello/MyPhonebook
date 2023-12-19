@@ -10,8 +10,8 @@ export const NavItem = styled(NavLink)`
   padding: 15px;
   border-radius: 5px;
   &:hover {
-    background-color: lightgray;
-    color: blue;
+    background-color: black;
+    color: orange;
   }
 `;
 
@@ -26,8 +26,8 @@ export const Btn = styled.button`
   border: none;
   border-radius: 5px;
   &:hover {
-    background-color: lightgray;
-    color: blue;
+    background-color: black;
+    color: orange;
   }
 `;
 

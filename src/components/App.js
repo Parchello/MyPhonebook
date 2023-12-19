@@ -6,9 +6,21 @@ import { PrivateRoute } from './privateRoute';
 import ContactsPage from 'Pages/ContactsPage/ContactsPage';
 import LoginPage from 'Pages/LoginPage';
 import RegisterPage from 'Pages/RegisterPage';
+import { useDispatch } from 'react-redux';
+import { useAuth } from './hook';
+import { useEffect } from 'react';
+import { refreshUser } from 'Redux/Auth/authOperations';
 
 export const App = () => {
-  return (
+  const dispatch = useDispatch();
+  const { isRefreshing } = useAuth();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+  return isRefreshing ? (
+    <b>Refreshing user...</b>
+  ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
