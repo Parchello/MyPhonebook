@@ -6,7 +6,7 @@ import { Toaster } from 'react-hot-toast';
 export const App = () => {
   return (
     <div>
-      <h1>Phone Book</h1>
+      <h1>Phone Boook</h1>
       <PhoneBook />
       <h2>Contacts</h2>
       <Filter />
