@@ -1,17 +1,39 @@
-import { PhoneBook } from './PhoneBook/PhoneBook';
-import { Contacts } from './Contacts/Contacts';
-import { Filter } from './Filter/Filter';
-import { Toaster } from 'react-hot-toast';
+import { Route, Routes } from 'react-router-dom';
+import { Layout } from './Layout/Layout';
+import HomePage from 'Pages/HomePage/HomePage';
+import { RestrictedRoute } from './restrictedRoute';
+import { PrivateRoute } from './privateRoute';
+import ContactsPage from 'Pages/ContactsPage/ContactsPage';
+import LoginPage from 'Pages/LoginPage';
+import RegisterPage from 'Pages/RegisterPage';
 
 export const App = () => {
   return (
-    <div>
-      <h1>Phone Boook</h1>
-      <PhoneBook />
-      <h2>Contacts</h2>
-      <Filter />
-      <Contacts />
-      <Toaster />
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route
+          path="/register"
+          element={
+            <RestrictedRoute
+              redirectTo="/contacts"
+              component={<RegisterPage />}
+            />
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
+          }
+        />
+        <Route
+          path="/contacts"
+          element={
+            <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+          }
+        />
+      </Route>
+    </Routes>
   );
 };
