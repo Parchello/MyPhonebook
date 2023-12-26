@@ -4,7 +4,7 @@ export const AuthNavigation = () => {
   return (
     <>
       <Nav>
-        <NavItem to={'/'}></NavItem>
+        <NavItem to={'/'}>Home</NavItem>
         <NavItem to={'/register'}>Registration</NavItem>
         <NavItem to={'/login'}>Login</NavItem>
       </Nav>

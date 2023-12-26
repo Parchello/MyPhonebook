@@ -10,8 +10,9 @@ import {
   ListItemAvatar,
   Avatar,
   Container,
-  Button,
+  IconButton,
 } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 export const Contacts = () => {
   const value = useSelector(selectContacts);
@@ -67,14 +68,13 @@ export const Contacts = () => {
               <Avatar {...stringAvatar(name)} />
             </ListItemAvatar>
             <ListItemText primary={name} secondary={number} />
-            <Button
-              variant="outlined"
+            <IconButton
+              aria-label="delete"
               color="error"
-              type="button"
               onClick={() => dispatch(deleteContact(id))}
             >
-              Delete
-            </Button>
+              <DeleteIcon />
+            </IconButton>
           </ListItem>
         ))}
       </List>

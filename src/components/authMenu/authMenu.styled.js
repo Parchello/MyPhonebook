@@ -10,6 +10,10 @@ export const NavItem = styled(NavLink)`
   padding: 15px;
   border-radius: 5px;
   &:hover {
+    background-color: grey;
+    color: orange;
+  }
+  &.active {
     background-color: black;
     color: orange;
   }
