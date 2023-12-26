@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { ContactDelButton } from './Contacts.styled';
 
 import { selectContacts, selectFilter } from 'Redux/selector';
 import { deleteContact, fetchContacts } from 'Redux/servise';
@@ -11,6 +10,7 @@ import {
   ListItemAvatar,
   Avatar,
   Container,
+  Button,
 } from '@mui/material';
 
 export const Contacts = () => {
@@ -67,14 +67,14 @@ export const Contacts = () => {
               <Avatar {...stringAvatar(name)} />
             </ListItemAvatar>
             <ListItemText primary={name} secondary={number} />
-            <ContactDelButton
+            <Button
               variant="outlined"
               color="error"
               type="button"
               onClick={() => dispatch(deleteContact(id))}
             >
               Delete
-            </ContactDelButton>
+            </Button>
           </ListItem>
         ))}
       </List>

@@ -1,3 +1,8 @@
 export default function HomePage() {
-  return <div>Hello!!! This is your phonebook!!!</div>;
+  return (
+    <div>
+      <h1>Hello!!! This is your phonebook!!!</h1>
+      <p>Here you can save your contacts</p>
+    </div>
+  );
 }
