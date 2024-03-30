@@ -62,21 +62,23 @@ export const Contacts = () => {
   return (
     <Container>
       <List>
-        {visibleContacts.map(({ name, number, id }) => (
-          <ListItem key={id} alignItems="flex-start">
-            <ListItemAvatar>
-              <Avatar {...stringAvatar(name)} />
-            </ListItemAvatar>
-            <ListItemText primary={name} secondary={number} />
-            <IconButton
-              aria-label="delete"
-              color="error"
-              onClick={() => dispatch(deleteContact(id))}
-            >
-              <DeleteIcon />
-            </IconButton>
-          </ListItem>
-        ))}
+        {visibleContacts
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .map(({ name, number, id }) => (
+            <ListItem key={id} alignItems="flex-start">
+              <ListItemAvatar>
+                <Avatar {...stringAvatar(name)} />
+              </ListItemAvatar>
+              <ListItemText primary={name} secondary={number} />
+              <IconButton
+                aria-label="delete"
+                color="error"
+                onClick={() => dispatch(deleteContact(id))}
+              >
+                <DeleteIcon />
+              </IconButton>
+            </ListItem>
+          ))}
       </List>
     </Container>
   );
