@@ -1,6 +1,13 @@
 import { useAuth } from 'components/hook';
 import { useDispatch } from 'react-redux';
-import { Btn, Container, NavItem, Text, Wrapper } from './UserMenu.styled';
+import {
+  Btn,
+  Container,
+  NavItem,
+  StyledText,
+  Text,
+  Wrapper,
+} from './UserMenu.styled';
 import { logOut } from 'Redux/Auth/authOperations';
 
 export const UserMenu = () => {
@@ -10,7 +17,9 @@ export const UserMenu = () => {
     <Wrapper>
       <NavItem to={'/contacts'}>Contacts</NavItem>
       <Container>
-        <Text>Welcome {user.name}!!!</Text>
+        <Text>
+          Welcome, <StyledText>{user.name}</StyledText>
+        </Text>
         <Btn type="button" onClick={() => dispatch(logOut())}>
           Logout
         </Btn>

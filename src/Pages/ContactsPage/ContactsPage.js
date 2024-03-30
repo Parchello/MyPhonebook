@@ -1,17 +1,17 @@
 import { Contacts } from 'components/Contacts/Contacts';
 import { Filter } from 'components/Filter/Filter';
 import { PhoneBook } from 'components/PhoneBook/PhoneBook';
-import { Container } from './ContactPage.styled';
+import { ContactsContainer, Container } from './ContactPage.styled';
 
 export default function ContactsPage() {
   return (
     <Container>
       <PhoneBook />
-      <div>
+      <ContactsContainer>
         <h2>Contacts</h2>
         <Filter />
         <Contacts />
-      </div>
+      </ContactsContainer>
     </Container>
   );
 }

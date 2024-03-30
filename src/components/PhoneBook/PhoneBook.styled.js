@@ -18,8 +18,10 @@ export const LabelName = styled.label`
 `;
 
 export const Button = styled.button`
+  background-color: green;
+  border-radius: 4px;
   margin-top: 10px;
   &:hover {
-    background-color: darkgray;
+    background-color: greenyellow;
   }
 `;
